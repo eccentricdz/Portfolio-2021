@@ -1,0 +1,146 @@
+@import "sass-exports/_utils.scss";
+@import "sass-exports/_variables.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  // https://stackoverflow.com/questions/12967441/disable-mobile-browser-click-touch-tap-feedback-box
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  -moz-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.App {
+  display: flex;
+  width: hGrid(12);
+  padding: vGrid(1) hGrid(1);
+  color: $primary-color;
+  background-color: $light-base-color;
+  min-height: 100vh;
+
+  .primary {
+    font-size: 2rem;
+
+    #my-name {
+      margin-bottom: 1vh;
+      line-height: 2.5rem;
+    }
+  }
+
+  #primary-rotator {
+    color: $highlight-color;
+    height: calc(50px + (76 - 50) * ((100vw - 800px) / (2560 - 800)));
+    padding: 10px 0;
+  }
+}
+
+div.grid-lines {
+  position: fixed;
+  height: 100vh;
+  width: 1px;
+  background: $light-grid-color;
+  top: 0;
+  z-index: -1;
+}
+
+.left-grid {
+  height: vGrid(6);
+  width: hGrid(3);
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  justify-content: space-between;
+  z-index: 2;
+
+  .left-grid-1 {
+    flex: 0 vGrid(1.5);
+    display: flex;
+    justify-content: space-between;
+
+    #resume-top {
+      display: none;
+    }
+  }
+
+  .left-grid-2 {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+
+    .left-grid-2-2 {
+      display: flex;
+
+      & > section {
+        flex: 1;
+      }
+    }
+  }
+
+  div#left-grid-line-2 {
+    align-self: center;
+  }
+}
+
+.right-grid {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding-left: hGrid(4);
+  min-height: vGrid(6);
+  width: 100%;
+  z-index: 1;
+  position: relative;
+
+  .right-grid-1 {
+    flex: 0 vGrid(1.5);
+  }
+
+  .right-grid-2 {
+    flex: 1;
+    margin-bottom: vGrid(1);
+    position: relative;
+  }
+
+  div#right-grid-line-2 {
+    align-self: center;
+  }
+
+  div#right-grid-line-3 {
+    align-self: flex-end;
+  }
+
+  footer {
+    position: absolute;
+    bottom: -1 * vGrid(1);
+    width: 100vw;
+    background: $light-grid-color;
+    padding: 2px hGrid(1);
+    left: -1 * hGrid(1);
+    font-size: 0.6rem;
+    z-index: 10;
+    text-align: center;
+    color: $secondary-color;
+
+    a {
+      color: $secondary-color;
+    }
+  }
+}
+
+// Custom scrollbars
+::-webkit-scrollbar {
+  width: 8px;
+  position: absolute;
+}
+
+::-webkit-scrollbar-track {
+  background: $light-base-color;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $secondary-color; 
+}
+
+@import "App_Mobile";
+@import "App_Dark";

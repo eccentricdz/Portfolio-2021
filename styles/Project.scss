@@ -1,0 +1,157 @@
+@import "styles/sass-exports/variables";
+@import "styles/sass-exports/utils";
+
+section.project {
+  height: hGrid(3);
+  width: hGrid(3);
+  position: relative;
+
+  a.project-link {
+    display: block;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &.skeleton {
+    margin: 2px 0px;
+    width: hGrid(2.9);
+    background-repeat: no-repeat;
+    background-image:
+      linear-gradient(90deg, transparent 0, rgba(228, 228, 228, 0.4) 50%, #F0F0F0 100%),
+      linear-gradient(#F0F0F0 99%, transparent 0);
+    
+    background-size: 50% 100%, 100% 100%;
+    background-position: -100% 0, 0 0;
+    animation: skeleton-animation 1.5s infinite;
+  }  
+
+  .project-details {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    top: 0;
+    background-color: $light-base-color;
+    padding: 2vw;
+    font-size: 0.7rem;
+    line-height: 1.1rem;
+    justify-content: space-between;
+    pointer-events: none;
+    opacity: 0;
+    border: 1px solid $light-grid-color;
+    @include animate(opacity);
+
+    .project-details-top {
+      flex: 1;
+
+      .project-title {
+        font-weight: bold;
+        color: $highlight-color;
+        margin-bottom: 1vw;
+      }
+
+      .project-divider {
+        height: 3px;
+        width: 2vw;
+        background-color: $highlight-color;
+        margin-bottom: 1vw;
+      }
+
+      .project-description {
+        color: $secondary-color;
+      }
+    }
+
+    .project-details-bottom {
+      .project-tags {
+        background: $light-grid-color;
+        display: inline-block;
+        padding: 3px 10px;
+        margin: 3px 3px 3px 0;
+        border-radius: 20px;
+        font-size: 0.6rem;
+      }
+    }
+  }
+
+  &:hover .project-details {
+    opacity: 1;
+  }
+}
+
+.App.dark {
+    .project.skeleton {
+      background-image:
+        linear-gradient(90deg, rgba(25, 31, 31, 0.1) 0, rgba(41, 41, 41, 0.4) 50%, rgba(25,31,31,0.1) 100%),
+        linear-gradient(#191F1F 99%, transparent 0);
+      
+      background-size: 50% 100%, 100% 100%;
+      background-position: -100% 0, 0 0;
+    } 
+    .project-details {
+        border-color: $dark-grid-color;
+        .project-details-top {
+          .project-description {
+            color: $dark-secondary-color;
+          }
+        }
+
+        .project-details-bottom {
+          .project-tags {
+            background: $dark-grid-color;
+          }
+        }
+    }
+}
+
+.skeleton-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+@keyframes skeleton-animation {
+  to {
+    background-position: 200% 0, 0 0;
+  }
+}
+
+@media only screen and (max-width: 800px) and (orientation: portrait) {
+  section.project {
+    width: hGrid(9.8);
+    height: hGrid(9.8);
+
+    &.skeleton {
+      width: hGrid(9.8);
+      height: hGrid(9.8);
+    }  
+
+    .project-details {
+      font-size: 0.8rem;
+      line-height: 1.2rem;
+      padding: 3vh;
+      .project-details-top {
+        .project-title,
+        .project-divider {
+          margin-bottom: 2vh;
+        }
+      }
+
+      .project-details-bottom {
+        .project-tags {
+          padding: 3px 10px;
+        }
+      }
+    }
+  }
+}

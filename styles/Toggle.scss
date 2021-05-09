@@ -1,0 +1,50 @@
+@import 'sass-exports/variables';
+@import 'sass-exports/utils';
+
+.toggle-container {
+  width: 55px;
+  height: 22px;
+  border: 3px solid $highlight-color;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+
+  .toggle-switch {
+    height: 10px;
+    width: 10px;
+    border-radius: 100%;
+    margin: 0 4px;
+    background: $highlight-color;
+    position: absolute;
+    @include animate(left);
+  }
+
+  &.left .toggle-switch {
+    left: 0;
+  }
+
+  &.right .toggle-switch {
+    left: 31px;
+  }
+}
+
+@media only screen  
+  and (max-width: 800px) {
+    .toggle-container {
+      width: 45px;
+      height: 18px;
+      border-width: 2px;
+
+      .toggle-switch {
+        width: 8px;
+        height: 8px;
+      }
+
+      &.right .toggle-switch {
+        left: 25px;
+      }
+    }
+}
+

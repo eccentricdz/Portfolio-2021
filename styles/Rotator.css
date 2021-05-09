@@ -1,0 +1,39 @@
+@keyframes rotate {
+  0% {
+    transform: translateY(-75px);
+  }
+
+  10%, 35% {
+    transform: translateY(0);
+  }
+
+  45%, 100% {
+    transform: translateY(75px);
+  }
+}
+
+.rotating-element {
+  transform: translateY(-75px);
+  animation: rotate 4.2s ease-in-out infinite;
+}
+
+.my-rotator {
+    overflow: hidden;
+    position: relative;
+}
+
+p.rotating-element {
+    position: absolute;
+}
+
+.my-rotator > .rotating-element:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.my-rotator > .rotating-element:nth-child(2) {
+  animation-delay: 1.4s;
+}
+
+.my-rotator > .rotating-element:nth-child(3) {
+  animation-delay: 2.8s;
+}

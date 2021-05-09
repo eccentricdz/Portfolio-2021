@@ -1,0 +1,18 @@
+@import "sass-exports/variables";
+
+.about {
+    color: $secondary-color;
+    position: relative;
+    a {
+        color: $secondary-color;
+    }
+}
+
+.App.dark {
+    .about {
+        color: $dark-secondary-color;
+        a {
+            color: $dark-secondary-color;
+        }
+    }
+}

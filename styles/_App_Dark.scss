@@ -1,0 +1,35 @@
+.App.dark {
+    background-color: $primary-color;
+    color: $dark-primary-color;
+  
+    a {
+      color: $dark-primary-color;
+    }
+  
+    .project-details {
+      background-color: $primary-color;
+    }
+
+    div.grid-lines {
+        background: $dark-grid-color;
+      }
+
+      .right-grid {
+        footer {
+          background-color: $dark-grid-color;
+          a {
+            color: $secondary-color;
+          }
+        }
+      }
+  }
+
+body.dark {
+  &::-webkit-scrollbar-track {
+    background: $primary-color;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $dark-grid-color; 
+  }
+}
