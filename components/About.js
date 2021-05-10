@@ -1,9 +1,12 @@
+import { useEffect } from "react";
 import Curtain from "./Curtain";
 
-export default function () {
+export default function ({ setCurtainState }) {
+  useEffect(() => {
+    setCurtainState("open");
+  }, []);
   return (
     <section className="about">
-      <Curtain></Curtain>
       <p>
         Hello! <br /> <br />
         I am a designer / developer hybrid and enjoy crafting functional and

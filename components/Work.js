@@ -4,10 +4,12 @@ import Curtain from "./Curtain";
 import SkeletonLoaders from "./SkeletonLoaders";
 import projectsArray from "../projects.json";
 
-const Work = ({ clickHandler }) => {
+const Work = ({ clickHandler, setCurtainState }) => {
+  useEffect(() => {
+    setCurtainState("open");
+  }, []);
   return (
     <section className="work">
-      <Curtain></Curtain>
       {projectsArray.map((project, index) => {
         const { id, description, title, url, tags, extension } = project;
         return (
