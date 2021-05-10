@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export default function ({ handleToggle }) {
+export default function Toggle({ handleToggle }) {
   const [switchPosition, setSwitchPosition] = useState("left");
 
   const toggle = () => {

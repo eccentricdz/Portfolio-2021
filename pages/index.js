@@ -13,9 +13,9 @@ export function logReactEvent(eventData) {
   ReactGA.event(eventData);
 }
 
-export default function () {
+export default function Index() {
   const [content, setContent] = useState("work");
-  const [showCurtain, setShowCurtain] = useState(false);
+  const [curtainState, setCurtainState] = useState("closed");
   const [mode, setMode] = useState("dark");
 
   useEffect(() => {
@@ -44,7 +44,7 @@ export default function () {
           .matchMedia("(prefers-color-scheme: dark)")
           .addEventListener("change", (e) => {
             const newMode = e.matches ? "dark" : "light";
-            setMode(newMode)
+            setMode(newMode);
 
             assignColorModeToBody(newMode);
           });
@@ -74,11 +74,10 @@ export default function () {
   };
 
   const contentToggleHandler = (content) => {
-    setShowCurtain(true);
+    setCurtainState("close");
     setTimeout(() => {
       logUserAction("Content Toggle", content);
       setContent(content);
-      setShowCurtain(false);
     }, 500);
   };
 
@@ -135,10 +134,10 @@ export default function () {
                 Instagram
               </Link>
               <Link
-                href="https://www.linkedin.com/in/simplyrahul93/"
-                id="linkedin"
+                href="https://twitter.com/simplyrahul93"
+                id="twitter"
               >
-                Linkedin
+                Twitter
               </Link>
               <Link
                 href="https://soundcloud.com/rahul-agarwal-397883738"
@@ -149,7 +148,10 @@ export default function () {
             </section>
           </div>
           <div className="left-grid-2-3">
-            <Link href="/documents/Rahul Agarwal - Resume.pdf" id="resume-bottom">
+            <Link
+              href="/documents/Rahul Agarwal - Resume.pdf"
+              id="resume-bottom"
+            >
               Resume
             </Link>
           </div>
@@ -169,12 +171,13 @@ export default function () {
           ></ContentToggle>
         </div>
         <div className="right-grid-2">
-          {showCurtain ? <Curtain shouldClose></Curtain> : null}
+          <Curtain state={curtainState}></Curtain>
           {content === "about" ? (
-            <About></About>
+            <About setCurtainState={setCurtainState}></About>
           ) : (
             <Work
               clickHandler={(id) => logUserAction("Project Click", id)}
+              setCurtainState={setCurtainState}
             ></Work>
           )}
         </div>

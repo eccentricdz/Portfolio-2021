@@ -1,6 +1,5 @@
 module.exports = {
-    reactStrictMode: true,
-    experimental: {
-      reactMode: 'concurrent'
-    }
+    future: {
+      webpack5: true,
+    },
   }

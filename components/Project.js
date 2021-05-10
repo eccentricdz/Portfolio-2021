@@ -5,7 +5,7 @@ export const ProjectSkeleton = () => (
   <section className="project skeleton"></section>
 );
 
-export default function (props) {
+export default function Project(props) {
   const projectTags = props.tags.split(",").map((tag, idx) => {
     return (
       <p className="project-tags" key={idx}>
@@ -30,6 +30,7 @@ export default function (props) {
           src={`/project-images/${props.id}.${props.imageExtension}`}
           alt={props.title}
           layout="fill"
+          priority={props.index < 4}
         ></Image>
       </a>
       <div className="project-details">

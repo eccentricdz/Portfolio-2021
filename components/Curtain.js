@@ -1,7 +1,7 @@
 import React from "react";
 
-export default function ({ shouldClose }) {
+export default function Curtain({ state }) {
   return (
-    <div className={`${shouldClose === true ? "close" : "open"} curtain`}></div>
+    <div className={`${state} curtain`}></div>
   );
 }

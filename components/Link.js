@@ -1,7 +1,7 @@
 import React from "react";
 import { logReactEvent } from "../pages";
 
-export default function ({ href, id, children }) {
+export default function Link({ href, id, children }) {
   return (
     <p>
       <a
