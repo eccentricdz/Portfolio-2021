@@ -32,3 +32,6 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+# Yarn lock due to Goshawk
+yarn.lock

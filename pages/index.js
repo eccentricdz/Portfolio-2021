@@ -134,10 +134,10 @@ export default function Index() {
                 Instagram
               </Link>
               <Link
-                href="https://www.linkedin.com/in/simplyrahul93/"
-                id="linkedin"
+                href="https://twitter.com/simplyrahul93"
+                id="twitter"
               >
-                Linkedin
+                Twitter
               </Link>
               <Link
                 href="https://soundcloud.com/rahul-agarwal-397883738"
