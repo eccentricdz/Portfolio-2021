@@ -30,6 +30,7 @@ export default function Project(props) {
           src={`/project-images/${props.id}.${props.imageExtension}`}
           alt={props.title}
           layout="fill"
+          priority={props.index < 4}
         ></Image>
       </a>
       <div className="project-details">

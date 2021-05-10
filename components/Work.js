@@ -15,6 +15,7 @@ const Work = ({ clickHandler, setCurtainState }) => {
         return (
           <Project
             key={index}
+            index={index}
             id={id}
             title={title}
             description={description}
