@@ -13,7 +13,7 @@ export function logReactEvent(eventData) {
   ReactGA.event(eventData);
 }
 
-export default function () {
+export default function Index() {
   const [content, setContent] = useState("work");
   const [curtainState, setCurtainState] = useState("closed");
   const [mode, setMode] = useState("dark");

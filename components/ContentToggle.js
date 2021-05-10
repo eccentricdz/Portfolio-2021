@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export default function (props) {
+export default function ContentToggle(props) {
   const [content, setContent] = useState(props.initialContent);
   useEffect(() => {
     props.contentToggleHandler(content);

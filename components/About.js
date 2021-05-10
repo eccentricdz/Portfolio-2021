@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import Curtain from "./Curtain";
 
-export default function ({ setCurtainState }) {
+export default function About({ setCurtainState }) {
   useEffect(() => {
     setCurtainState("open");
   }, []);

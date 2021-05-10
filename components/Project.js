@@ -5,7 +5,7 @@ export const ProjectSkeleton = () => (
   <section className="project skeleton"></section>
 );
 
-export default function (props) {
+export default function Project(props) {
   const projectTags = props.tags.split(",").map((tag, idx) => {
     return (
       <p className="project-tags" key={idx}>

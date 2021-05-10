@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function ({ state }) {
+export default function Curtain({ state }) {
   return (
     <div className={`${state} curtain`}></div>
   );
