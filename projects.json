@@ -1,5 +1,12 @@
 [
     {
+        "title": "Coin Feed - News aggregator app for Crypto.",
+        "description": "A news aggregator app that presents all that's going in the Crypto & Web 3 landscape in a sleek interface, letting you pick and choose your sources and re-arrange them based on your preferences. No ads, no bloat, just content in an intuitive interface.",
+        "id": "coinfeed",
+        "url": "https://play.google.com/store/apps/details?id=com.edz.CoinFeed&ref=producthunt",
+        "tags": "UI / UX, Development, React Native, Web3"
+    },
+    {
         "title": "Jeevan - Mental Health Awareness Campaign",
         "description": "Jeevan is a NGO based out of Jamshedpur, India that aims to reduce the stigma around mental health. I have been working with this NGO to design graphics for their social media outreach and related events and the project showcases some of them.",
         "id": "jeevan",
