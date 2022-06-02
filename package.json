@@ -8,11 +8,12 @@
     "start": "next start"
   },
   "dependencies": {
+    "@zeit/next-sass": "^1.0.1",
     "next": "*",
+    "prop-types": "^15.6.0",
     "react": "*",
     "react-dom": "*",
     "react-ga": "*",
-    "sass": "*",
-    "prop-types": "^15.6.0"
+    "sass": "*"
   }
 }
